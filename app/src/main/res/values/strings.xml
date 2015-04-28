@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="app_name">ViewPagerWithoutFragments</string>
+
+    <string name="red">Red</string>
+    <string name="blue">Blue</string>
+    <string name="orange">Orange</string>
+
+</resources>
