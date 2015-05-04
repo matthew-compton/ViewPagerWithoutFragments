@@ -16,16 +16,16 @@ public class CustomPagerAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup collection, int position) {
-        CustomPagerEnum tab = CustomPagerEnum.values()[position];
-        LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        ViewGroup layout = (ViewGroup) inflater.inflate(tab.getLayoutResId(), collection, false);
+        CustomPagerEnum customPagerEnum = CustomPagerEnum.values()[position];
+        LayoutInflater inflater = LayoutInflater.from(mContext);
+        ViewGroup layout = (ViewGroup) inflater.inflate(customPagerEnum.getLayoutResId(), collection, false);
         collection.addView(layout);
         return layout;
     }
 
     @Override
     public void destroyItem(ViewGroup collection, int position, Object view) {
-        collection.removeView((ViewGroup) view);
+        collection.removeView((View) view);
     }
 
     @Override
@@ -40,8 +40,8 @@ public class CustomPagerAdapter extends PagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        CustomPagerEnum tab = CustomPagerEnum.values()[position];
-        return mContext.getString(tab.getTitleResId());
+        CustomPagerEnum customPagerEnum = CustomPagerEnum.values()[position];
+        return mContext.getString(customPagerEnum.getTitleResId());
     }
 
 }
